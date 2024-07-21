@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #121212; color: aliceblue">
+    <ul class="language">
+      <li>Javascript</li>
+      <li>Python</li>
+    </ul>
+  </body>
+  <script>
+    function langname(val) {
+      const li = document.createElement("li");
+      li.innerHTML = `${val}`;
+      document.querySelector('.language').appendChild(li)
+    }
+    langname("typescript")
+    langname("golang")
+    function optimal(val){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(val))
+        document.querySelector('.language').appendChild(li)
+
+        // document.querySelector('.language').appendChild(document.createElement('li').appendChild(document.createTextNode(val)))
+    }
+    optimal("cpp")
+
+    const secondlang = document.querySelector('li:nth-child(2)')
+    // secondlang.innerHTML = "Rust"
+    const newli = document.createElement('li')
+    newli.textContent = "Rust"
+    secondlang.replaceWith(newli)
+    // secondlang.outerHTML = "<li>Rust</li>"
+
+    //remove
+
+    const lastChild  = document.querySelector("li:last-child")
+    lastChild.remove()
+
+  </script>
+</html>
